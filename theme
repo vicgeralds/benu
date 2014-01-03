@@ -1,9 +1,14 @@
-# Benu for pekwm 0.1.6
+# Benu for pekwm 0.1.7
 # by Victor Nilsson
 # http://victornils.net
+#
+# 2008-09-07
+# Added HeightAdapt to Title of Decor "DEFAULT"
+# Added Decor "WORKSPACEINDICATOR" and WorkspaceIndicator block
 
 $FONT = "-*-helvetica-bold-r-*-*-10-*-*-*-*-*-iso8859-1"
 $MENUFONT = "-*-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1"
+$WORKSPACE_FONT = "-*-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1"
 
 $TITLETEXT_FO_0 = "#000000"
 $TITLETEXT_FO_1 = "#B58200"
@@ -26,6 +31,7 @@ PDecor {
 Decor = "DEFAULT" {
     Title {
 	Height = "22"
+	HeightAdapt = "False"
 	Pad = "5 0 5 5"
 	WidthMin = "1"
 
@@ -145,6 +151,57 @@ Decor = "MENU" {
     }
 }
 
+Decor = "WORKSPACEINDICATOR" {
+	Title {
+		Height = "0"
+		Pad = "0 0 0 0"
+		Focused = "Empty"
+		Unfocused = "Empty"
+		Tab {
+			Focused = "Empty"
+			FocusedSelected = "Empty"
+			Unfocused = "Empty"
+			UnfocusedSelected = "Empty"
+		}
+		Separator {
+			Focused = "Empty"
+			Unfocused = "Empty"
+		}
+		Font {
+			Focused = "Empty"
+		}
+		FontColor {
+			Focused = "Empty"
+			FocusedSelected = "Empty"
+			Unfocused = "Empty"
+			UnfocusedSelected = "Empty"
+		}
+		Border {
+			Focused {
+				TopLeft = "Solid #000000 1x1"
+				Top = "Solid #000000 1x1"
+				TopRight = "Solid #000000 1x1"
+				Left = "Solid #000000 1x1"
+				Right = "Solid #000000 1x1"
+				BottomLeft = "Solid #000000 1x1"
+				Bottom = "Solid #000000 1x1"
+				BottomRight = "Solid #000000 1x1"
+			}
+			Unfocused {
+				TopLeft = "Solid #000000 1x1"
+				Top = "Solid #000000 1x1"
+				TopRight = "Solid #000000 1x1"
+				Left = "Solid #000000 1x1"
+				Right = "Solid #000000 1x1"
+				BottomLeft = "Solid #000000 1x1"
+				Bottom = "Solid #000000 1x1"
+				BottomRight = "Solid #000000 1x1"
+			}
+		}
+	}
+}
+
+# End PDecor
 }
 
 Menu {
@@ -191,4 +248,12 @@ Status {
 	Pad = "3 3 5 5"
 }
 
-Root { Command = "false" }
+WorkspaceIndicator {
+	Font = "$WORKSPACE_FONT"
+	Background = "Solid #ffffff"
+	Workspace = "Solid $PANELBG"
+	WorkspaceActive = "Solid $PANELSHADOW"
+	Text = "#000000"
+	EdgePadding = "5"
+	WorkspacePadding = "2"
+}
