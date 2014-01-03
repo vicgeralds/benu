@@ -1,6 +1,8 @@
 /* rgbhex.c 
  *
- * Copyright (c) 2005 Victor Nilsson <nilsvic@gmail.com>
+ * Copyright (c) 2005, 2010 Victor Nilsson <victor@victornils.net>
+ *
+ * 2010-03-20 Fixed array size bugs
  */
 
 #include <stdio.h>
@@ -100,7 +102,7 @@ int main (int argc, char **argv)
 
 int hexdigit(char c)
 {
-	char ch[1];
+	char ch[2];
 	switch (c) {
 	case 'A': case 'a': return 10;
 	case 'B': case 'b': return 11;
@@ -167,7 +169,7 @@ void set_rgbadd(int *rgb, int *rgbadd, int add, int perc)
 void count_print(char *hexstr, int *rgbadd)
 {
 	char *hexchr = "0123456789ABCDEF";
-	int rgb[2];
+	int rgb[3];
 	int i;
 
 	for (i = 0; i < 3; i++) {

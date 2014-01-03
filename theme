@@ -1,10 +1,18 @@
-# Benu for pekwm 0.1.7
+# Benu for pekwm 0.1.11
 # by Victor Nilsson
 # http://victornils.net
 #
 # 2008-09-07
 # Added HeightAdapt to Title of Decor "DEFAULT"
 # Added Decor "WORKSPACEINDICATOR" and WorkspaceIndicator block
+#
+# 2010-04-20
+# Changed WidthMin to 100
+# pekdon's other changes provided in comments
+
+#$FONT = "XFT#Sans:size=12"
+#$MENUFONT = "XFT#Sans:size=12"
+#$WORKSPACE_FONT = "XFT#Sans:size=12"
 
 $FONT = "-*-helvetica-bold-r-*-*-10-*-*-*-*-*-iso8859-1"
 $MENUFONT = "-*-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1"
@@ -32,8 +40,9 @@ Decor = "DEFAULT" {
     Title {
 	Height = "22"
 	HeightAdapt = "False"
+	#Pad = "2 0 5 5"
 	Pad = "5 0 5 5"
-	WidthMin = "1"
+	WidthMin = "100"
 
 	Focused = "Empty"
 	Unfocused = "Empty"
