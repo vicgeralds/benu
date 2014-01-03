@@ -1,0 +1,9 @@
+/* XPM */
+static char * topleft_fo_xpm[] = {
+"3 3 3 1",
+".	c #404040",
+"%	c #FFFFFF",
+"$	c #D6D6D6",
+"...",
+".%%",
+".%$"};

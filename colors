@@ -1,0 +1,31 @@
+Text              = 000000
+Border            = d6d6d6
+BorderLight       = $Border:25%
+BorderShadow      = $Border:-12%
+BorderOutline_fo  = 404040 000000
+BorderOutline_un  = 9c9c9c 9c9c9c:-20%
+
+TitleBG_fo        = ffcb00 e7e7e7
+TitleBG_un        = $Border
+TitleLight_fo     = $TitleBG_fo[0]:25% $TitleBG_fo[1]:25%
+TitleLight_un     = $TitleBG_un:15% $TitleBG_un:25%
+TitleShadow_fo    = b58200 9c9c9c
+TitleShadow_un    = $BorderOutline_un[0] $BorderShadow
+TitleOutline_fo   = $BorderOutline_fo[0] $BorderOutline_fo[1]
+TitleOutline_un   = $BorderOutline_un[0] $BorderOutline_un[1]
+TitleText_fo      = 000000 $TitleShadow_fo[0]
+TitleText_un      = 000000 $TitleShadow_un[0]
+
+MenuBG_fo         = e7e7e7
+MenuBG_un         = $Border
+MenuLight         = $BorderLight
+MenuShadow        = $BorderOutline_un[0]
+MenuText          = $Text
+MenuSelectedBG    = b5b5b5
+MenuSelectedLight = efefef
+MenuSelectedText  = $Text
+
+PanelBG           = $Border
+PanelLight        = $BorderLight
+PanelShadow       = $BorderOutline_un[0]
+PanelText         = $Text

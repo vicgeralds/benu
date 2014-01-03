@@ -1,0 +1,194 @@
+# Benu for pekwm 0.1.6
+# by Victor Nilsson
+# http://victornils.net
+
+$FONT = "-*-helvetica-bold-r-*-*-10-*-*-*-*-*-iso8859-1"
+$MENUFONT = "-*-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1"
+
+$TITLETEXT_FO_0 = "#000000"
+$TITLETEXT_FO_1 = "#B58200"
+$TITLETEXT_UN_0 = "#000000"
+$TITLETEXT_UN_1 = "#9C9C9C"
+$MENUBG_FO = "#E7E7E7"
+$MENUBG_UN = "#D6D6D6"
+$MENULIGHT = "#FFFFFF"
+$MENUSHADOW = "#9C9C9C"
+$MENUTEXT = "#000000"
+$MENUSELECTEDBG = "#B5B5B5"
+$MENUSELECTEDTEXT = "#000000"
+$PANELBG = "#D6D6D6"
+$PANELLIGHT = "#FFFFFF"
+$PANELSHADOW = "#9C9C9C"
+$PANELTEXT = "#000000"
+
+PDecor {
+
+Decor = "DEFAULT" {
+    Title {
+	Height = "22"
+	Pad = "5 0 5 5"
+	WidthMin = "1"
+
+	Focused = "Empty"
+	Unfocused = "Empty"
+
+	Tab {
+		Focused = "Image title-fo.xpm"
+		FocusedSelected = "Image title-fo.xpm"
+		Unfocused = "Image title-un.xpm"
+		UnfocusedSelected = "Image title-un.xpm"
+	}
+	Separator {
+		Focused = "Image sep-fo.xpm"
+		Unfocused = "Image sep-un.xpm"
+	}
+	Font { Focused = "$FONT" }
+	FontColor {
+		Focused = "$TITLETEXT_FO_1"
+		FocusedSelected = "$TITLETEXT_FO_0"
+		Unfocused = "$TITLETEXT_UN_1"
+		UnfocusedSelected = "$TITLETEXT_UN_0"
+	}
+	Buttons {
+		Left {
+			Button = "1" { Actions = "Close" }
+			Button = "2" { Actions = "Kill" }
+			Button = "3" { Actions = "Toggle Iconified" }
+			Focused = "Image close-fo.xpm"
+			Unfocused = "Image close-un.xpm"
+			Pressed = "Image close-pr.xpm"
+		}
+		Right {
+			Button = "1" { Actions = "Toggle Maximized 1 1" }
+			Button = "2" { Actions = "Toggle Maximized 0 1" }
+			Button = "3" { Actions = "Toggle Maximized 1 0" }
+			Focused = "Image max-fo.xpm"
+			Unfocused = "Image max-un.xpm"
+			Pressed = "Image max-pr.xpm"
+		}
+	}
+	Border {
+		Focused {
+			TopLeft		= "Image topleft-fo.xpm"
+			Top		= "Image top-fo.xpm"
+			TopRight	= "Image topright-fo.xpm"
+			Left		= "Image left-fo.xpm"
+			Right		= "Image right-fo.xpm"
+			BottomLeft	= "Image btmleft-fo.xpm"
+			Bottom		= "Image btm-fo.xpm"
+			BottomRight	= "Image btmright-fo.xpm"
+		}
+		Unfocused {
+			TopLeft		= "Image topleft-un.xpm"
+			Top		= "Image top-un.xpm"
+			TopRight	= "Image topright-un.xpm"
+			Left		= "Image left-un.xpm"
+			Right		= "Image right-un.xpm"
+			BottomLeft	= "Image btmleft-un.xpm"
+			Bottom		= "Image btm-un.xpm"
+			BottomRight	= "Image btmright-un.xpm"
+		}
+	}
+    }
+}
+
+Decor = "MENU" {
+    Title {
+	Height = "0"
+	Pad = "0 0 0 0"
+	Focused = "Empty"
+	Unfocused = "Empty"
+	Tab {
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"
+	}
+	Separator {
+		Focused = "Empty"
+		Unfocused = "Empty"
+	}
+	Font {
+		Focused = "$MENUFONT"
+		FocusedSelected = "$MENUFONT"
+		Unfocused = "$MENUFONT"
+		UnfocusedSelected = "$MENUFONT"
+	}
+	FontColor {
+		Focused = "$MENUTEXT"
+		FocusedSelected = "$MENUSELECTEDTEXT"
+		Unfocused = "$MENUTEXT"
+		UnfocusedSelected = "$MENUSELECTEDTEXT"
+	}
+	Border {
+		Focused {
+			TopLeft		= "Image topleft-fo.xpm"
+			Top		= "Image top-fo.xpm"
+			TopRight	= "Image topright-fo.xpm"
+			Left		= "Image left-fo.xpm"
+			Right		= "Image right-fo.xpm"
+			BottomLeft	= "Image btmleft-fo.xpm"
+			Bottom		= "Image btm-fo.xpm"
+			BottomRight	= "Image btmright-fo.xpm"
+		}
+		Unfocused {
+			TopLeft		= "Image topleft-un.xpm"
+			Top		= "Image top-un.xpm"
+			TopRight	= "Image topright-un.xpm"
+			Left		= "Image left-un.xpm"
+			Right		= "Image right-un.xpm"
+			BottomLeft	= "Image btmleft-un.xpm"
+			Bottom		= "Image btm-un.xpm"
+			BottomRight	= "Image btmright-un.xpm"
+		}
+	}
+    }
+}
+
+}
+
+Menu {
+    Focused {
+	Font = "$MENUFONT"
+	Background = "Solid $MENUBG_FO"
+	Item = "Empty"
+	Text = "$MENUTEXT"
+	Separator = "SolidRaised $MENUBG_FO $MENUSHADOW $MENULIGHT 1x2"
+	Arrow = "Image arrow-fo.xpm"
+    }
+    Unfocused {
+	Font = "$MENUFONT"
+	Background = "Solid $MENUBG_UN"
+	Item = "Empty"
+	Text = "$MENUTEXT"
+	Separator = "SolidRaised $MENUBG_UN $MENUSHADOW $MENULIGHT 1x2"
+	Arrow = "Image arrow-un.xpm"
+    }
+    Selected {
+	Font = "$MENUFONT"
+	Background = "Empty"
+	Item = "Solid $MENUSELECTEDBG"
+	Text = "$MENUSELECTEDTEXT"
+	Separator = "Empty"
+	Arrow = "Image arrow-sel.xpm"
+    }
+    Pad = "3 3 5 2"
+}
+
+Harbour { Texture = "Solid $PANELBG" }
+
+CmdDialog {
+	Font = "$MENUFONT"
+	Texture = "Solid white"
+	Text = "black"
+	Pad = "3 3 5 5"
+}
+
+Status {
+	Font = "$MENUFONT"
+	Texture = "SolidRaised $PANELBG $PANELSHADOW $PANELLIGHT"
+	Text = "$PANELTEXT"
+	Pad = "3 3 5 5"
+}
+
+Root { Command = "false" }

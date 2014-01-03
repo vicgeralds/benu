@@ -1,0 +1,9 @@
+Benu for pekwm 0.1.6
+
+This theme was created in 2005 by Victor Nilsson.
+
+The script "updatetheme.pl" can be used to change the colours in the images
+and the theme file. You need to run "make rgbhex" before using it.
+Then edit "colors", run "./updatetheme.pl" and see what happens.
+
+http://victornils.net/skins/
