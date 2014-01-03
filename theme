@@ -1,22 +1,10 @@
-# Benu for pekwm 0.1.11
+# Benu for pekwm 0.1.17
 # by Victor Nilsson
-# http://victornils.net
 #
-# 2008-09-07
-# Added HeightAdapt to Title of Decor "DEFAULT"
-# Added Decor "WORKSPACEINDICATOR" and WorkspaceIndicator block
-#
-# 2010-04-20
-# Changed WidthMin to 100
-# pekdon's other changes provided in comments
 
-#$FONT = "XFT#Sans:size=12"
-#$MENUFONT = "XFT#Sans:size=12"
-#$WORKSPACE_FONT = "XFT#Sans:size=12"
-
-$FONT = "-*-helvetica-bold-r-*-*-10-*-*-*-*-*-iso8859-1"
-$MENUFONT = "-*-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1"
-$WORKSPACE_FONT = "-*-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1"
+$FONT = "XFT#Sans:size=9"
+$MENUFONT = "XFT#Sans:size=9"
+$WORKSPACE_FONT = "XFT#Sans:size=11"
 
 $TITLETEXT_FO_0 = "#000000"
 $TITLETEXT_FO_1 = "#B58200"
@@ -34,13 +22,13 @@ $PANELLIGHT = "#FFFFFF"
 $PANELSHADOW = "#9C9C9C"
 $PANELTEXT = "#000000"
 
-PDecor {
+Require {
+	Templates = "True"
+}
 
-Decor = "DEFAULT" {
-    Title {
+Define = "BaseDecor" {
 	Height = "22"
 	HeightAdapt = "False"
-	#Pad = "2 0 5 5"
 	Pad = "5 0 5 5"
 	WidthMin = "100"
 
@@ -57,31 +45,37 @@ Decor = "DEFAULT" {
 		Focused = "Image sep-fo.xpm"
 		Unfocused = "Image sep-un.xpm"
 	}
-	Font { Focused = "$FONT" }
+	Font {
+		Focused = "$FONT"
+	}
 	FontColor {
 		Focused = "$TITLETEXT_FO_1"
 		FocusedSelected = "$TITLETEXT_FO_0"
 		Unfocused = "$TITLETEXT_UN_1"
 		UnfocusedSelected = "$TITLETEXT_UN_0"
 	}
+}
+
+Define = "BaseButtons" {
 	Buttons {
-		Left {
+		Left = "Close" {
 			Button = "1" { Actions = "Close" }
-			Button = "2" { Actions = "Kill" }
-			Button = "3" { Actions = "Toggle Iconified" }
+			Button = "3" { Actions = "Set Iconified" }
 			Focused = "Image close-fo.xpm"
 			Unfocused = "Image close-un.xpm"
 			Pressed = "Image close-pr.xpm"
 		}
-		Right {
+		Right = "Maximize" {
 			Button = "1" { Actions = "Toggle Maximized 1 1" }
-			Button = "2" { Actions = "Toggle Maximized 0 1" }
-			Button = "3" { Actions = "Toggle Maximized 1 0" }
+			Button = "3" { Actions = "Toggle Maximized 0 1" }
 			Focused = "Image max-fo.xpm"
 			Unfocused = "Image max-un.xpm"
 			Pressed = "Image max-pr.xpm"
 		}
 	}
+}
+
+Define = "BaseBorder" {
 	Border {
 		Focused {
 			TopLeft		= "Image topleft-fo.xpm"
@@ -104,13 +98,9 @@ Decor = "DEFAULT" {
 			BottomRight	= "Image btmright-un.xpm"
 		}
 	}
-    }
 }
 
-Decor = "MENU" {
-    Title {
-	Height = "0"
-	Pad = "0 0 0 0"
+Define = "EmptyDecor" {
 	Focused = "Empty"
 	Unfocused = "Empty"
 	Tab {
@@ -124,96 +114,74 @@ Decor = "MENU" {
 		Unfocused = "Empty"
 	}
 	Font {
-		Focused = "$MENUFONT"
-		FocusedSelected = "$MENUFONT"
-		Unfocused = "$MENUFONT"
-		UnfocusedSelected = "$MENUFONT"
+		Focused = "Empty"
 	}
 	FontColor {
-		Focused = "$MENUTEXT"
-		FocusedSelected = "$MENUSELECTEDTEXT"
-		Unfocused = "$MENUTEXT"
-		UnfocusedSelected = "$MENUSELECTEDTEXT"
+		Focused = "Empty"
+		FocusedSelected = "Empty"
+		Unfocused = "Empty"
+		UnfocusedSelected = "Empty"
 	}
+}
+
+Define = "EmptyBorder" {
 	Border {
 		Focused {
-			TopLeft		= "Image topleft-fo.xpm"
-			Top		= "Image top-fo.xpm"
-			TopRight	= "Image topright-fo.xpm"
-			Left		= "Image left-fo.xpm"
-			Right		= "Image right-fo.xpm"
-			BottomLeft	= "Image btmleft-fo.xpm"
-			Bottom		= "Image btm-fo.xpm"
-			BottomRight	= "Image btmright-fo.xpm"
+			TopLeft = "Empty"
+			Top = "Empty"
+			TopRight = "Empty"
+			Left = "Empty"
+			Right = "Empty"
+			BottomLeft = "Empty"
+			Bottom = "Empty"
+			BottomRight = "Empty"
 		}
 		Unfocused {
-			TopLeft		= "Image topleft-un.xpm"
-			Top		= "Image top-un.xpm"
-			TopRight	= "Image topright-un.xpm"
-			Left		= "Image left-un.xpm"
-			Right		= "Image right-un.xpm"
-			BottomLeft	= "Image btmleft-un.xpm"
-			Bottom		= "Image btm-un.xpm"
-			BottomRight	= "Image btmright-un.xpm"
-		}
-	}
-    }
-}
-
-Decor = "WORKSPACEINDICATOR" {
-	Title {
-		Height = "0"
-		Pad = "0 0 0 0"
-		Focused = "Empty"
-		Unfocused = "Empty"
-		Tab {
-			Focused = "Empty"
-			FocusedSelected = "Empty"
-			Unfocused = "Empty"
-			UnfocusedSelected = "Empty"
-		}
-		Separator {
-			Focused = "Empty"
-			Unfocused = "Empty"
-		}
-		Font {
-			Focused = "Empty"
-		}
-		FontColor {
-			Focused = "Empty"
-			FocusedSelected = "Empty"
-			Unfocused = "Empty"
-			UnfocusedSelected = "Empty"
-		}
-		Border {
-			Focused {
-				TopLeft = "Solid #000000 1x1"
-				Top = "Solid #000000 1x1"
-				TopRight = "Solid #000000 1x1"
-				Left = "Solid #000000 1x1"
-				Right = "Solid #000000 1x1"
-				BottomLeft = "Solid #000000 1x1"
-				Bottom = "Solid #000000 1x1"
-				BottomRight = "Solid #000000 1x1"
-			}
-			Unfocused {
-				TopLeft = "Solid #000000 1x1"
-				Top = "Solid #000000 1x1"
-				TopRight = "Solid #000000 1x1"
-				Left = "Solid #000000 1x1"
-				Right = "Solid #000000 1x1"
-				BottomLeft = "Solid #000000 1x1"
-				Bottom = "Solid #000000 1x1"
-				BottomRight = "Solid #000000 1x1"
-			}
+			TopLeft = "Empty"
+			Top = "Empty"
+			TopRight = "Empty"
+			Left = "Empty"
+			Right = "Empty"
+			BottomLeft = "Empty"
+			Bottom = "Empty"
+			BottomRight = "Empty"
 		}
 	}
 }
 
-# End PDecor
+PDecor {
+	Decor = "DEFAULT" {
+		Title {
+			@BaseDecor
+			@BaseButtons
+			@BaseBorder
+		}
+	}
+
+	Decor = "MENU" {
+		Title {
+			@EmptyDecor
+			@BaseBorder
+		}
+	}
+
+	Decor = "STATUSWINDOW" {
+		Title {
+			@EmptyDecor
+			@EmptyBorder
+		}
+	}
+
+	Decor = "WORKSPACEINDICATOR" {
+		Title {
+			@EmptyDecor
+			@EmptyBorder
+		}
+	}
 }
 
 Menu {
+    Pad = "3 3 5 2"
     Focused {
 	Font = "$MENUFONT"
 	Background = "Solid $MENUBG_FO"
@@ -238,15 +206,16 @@ Menu {
 	Separator = "Empty"
 	Arrow = "Image arrow-sel.xpm"
     }
-    Pad = "3 3 5 2"
 }
 
-Harbour { Texture = "Solid $PANELBG" }
+Harbour {
+	Texture = "Solid $PANELBG"
+}
 
 CmdDialog {
 	Font = "$MENUFONT"
-	Texture = "Solid white"
-	Text = "black"
+	Texture = "Solid #ffffff"
+	Text = "#000000"
 	Pad = "3 3 5 5"
 }
 
