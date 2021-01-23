@@ -26,6 +26,10 @@ Require {
 	Templates = "True"
 }
 
+Background {
+	Texture = "Solid #bebebe"
+}
+
 Define = "BaseDecor" {
 	Height = "22"
 	HeightAdapt = "False"
@@ -101,6 +105,7 @@ Define = "BaseBorder" {
 }
 
 Define = "EmptyDecor" {
+	Height = "0"
 	Focused = "Empty"
 	Unfocused = "Empty"
 	Tab {
